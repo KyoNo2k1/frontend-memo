@@ -12,8 +12,8 @@ export default makeStyles((theme) => ({
         display: 'flex',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
-        flexWrap: 'wrap',
-        flexDirection: 'column',
+            flexWrap: 'wrap',
+            flexDirection: 'column',
         },
     },
     section: {
@@ -24,16 +24,46 @@ export default makeStyles((theme) => ({
     imageSection: {
         marginLeft: '20px',
         [theme.breakpoints.down('sm')]: {
-        marginLeft: 0,
+            marginLeft: 0,
         },
     },
     recommendedPosts: {
         display: 'flex',
+        width: '100%',
+        overflowX: 'auto',
         [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column',
+            flexDirection: 'column',
         },
     },
     loadingPaper: {
-        display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '20px',
+        borderRadius: '15px',
+        height: '39vh',
     },
+    commentsOuterContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
+    commentsInnerContainer: {
+        height: '200px',
+        overflowY: 'auto',
+        marginRight: '30px',
+    },
+    typoBlock: {
+        display: 'block',
+    },
+    recommendedPostsCss : {
+        margin: '20px',
+        cursor: 'pointer',
+        border: '1px ridge #333',
+        padding: '10px',
+        borderRadius: '20px',
+        display: 'block',
+        '&:hover': {
+            opacity: '0.7',
+        },
+    }
 }));

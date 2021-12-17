@@ -43,6 +43,10 @@ function Navbar() {
         setUser(JSON.parse(localStorage.getItem('profile')))
     },[location])
 
+    const handleSignIn = () => {
+        navigate('/auth')
+    }
+
     return (
         <AppBar className={classes.appBar} position='static' color='inherit'>
             <Link to="/" className={classes.brandContainer}>
@@ -57,7 +61,7 @@ function Navbar() {
                         <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                     </div>
                 ) : (
-                    <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+                    <Button onClick={handleSignIn} variant="contained" color="primary">Sign In</Button>
                 )}
             </Toolbar>
         </AppBar>

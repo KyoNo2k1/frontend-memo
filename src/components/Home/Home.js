@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from 'react'
+import React , { useState } from 'react'
 import { Container, Grid, Grow, Paper, AppBar, TextField, Button } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -85,7 +85,6 @@ function Home() {
                             <Button onClick={searchPost} className={classes.searchButton} color="primary" variant="contained">Search</Button>
                         </AppBar>
                         <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                        
                     </Grid>
                 </Grid>
             </Container>
