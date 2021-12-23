@@ -11,7 +11,7 @@ function Paginate({page}) {
     const dispatch = useDispatch()
 
     const { numberOfPages } = useSelector((store) => store.posts)
-
+    console.log(numberOfPages);
     useEffect(() => {
         if (page) dispatch(getPosts(page))
     },[page])

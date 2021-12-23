@@ -8,6 +8,7 @@ import memoriesLogo from '../../images/logoImage.jpg'
 import memoriesText from '../../images/textImage.png'
 import * as actionType from '../../constants/actionType'
 import useStyles from './styles'
+import Form from '../Form/Form'
 
 function Navbar() {
     const classes = useStyles()
@@ -15,8 +16,7 @@ function Navbar() {
     const dispatch= useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
-
-    console.log(user);
+    const [currentId, setCurrentId] = useState(null)
 
     const logout = () => {
         const action = {
@@ -61,7 +61,10 @@ function Navbar() {
                         <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                     </div>
                 ) : (
-                    <Button onClick={handleSignIn} variant="contained" color="primary">Sign In</Button>
+                    <div className={classes.signInLocations}>
+                        <Form currentId={currentId} setCurrentId={setCurrentId}/>
+                        <Button onClick={handleSignIn} variant="contained" color="primary" className={classes.btnSignIn}>Sign In</Button>
+                    </div>
                 )}
             </Toolbar>
         </AppBar>

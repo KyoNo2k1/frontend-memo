@@ -59,4 +59,12 @@ export default makeStyles((theme) => ({
         color: theme.palette.getContrastText(deepPurple[500]),
         backgroundColor: deepPurple[500],
     },
+    signInLocations: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    btnSignIn: {
+        width:  '30%',
+        marginLeft: '30px'
+    },
 }));
