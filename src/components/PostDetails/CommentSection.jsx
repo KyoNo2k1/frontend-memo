@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { Typography, TextField, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux'
 
-import useStyles from './styles'
+import useStyles from '../Pagination/styles'
 import {commentPost} from '../../actions/posts'
 
 function CommentSection({post}) {

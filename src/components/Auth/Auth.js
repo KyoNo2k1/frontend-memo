@@ -112,7 +112,7 @@ function Auth() {
                     <Grid container justify="flex-end">
                         <Grid item>
                             <Button onClick={switchMode}>
-                                { isSignup ? 'Already have an account ~ Sign In!' : 'Don\'t have account ~ Sign Up!'}
+                                { isSignup ? <Paper elevation={6}> Already have an account ~ Sign In! </Paper> :  <Paper elevation={6}>Don\'t have account ~ Sign Up!</Paper>}
                             </Button>
                         </Grid>
                     </Grid>

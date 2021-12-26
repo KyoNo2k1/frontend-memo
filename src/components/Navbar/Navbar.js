@@ -61,10 +61,7 @@ function Navbar() {
                         <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                     </div>
                 ) : (
-                    <div className={classes.signInLocations}>
-                        <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                        <Button onClick={handleSignIn} variant="contained" color="primary" className={classes.btnSignIn}>Sign In</Button>
-                    </div>
+                    <Button onClick={handleSignIn} variant="contained" color="primary" className={classes.btnSignIn}>Sign In</Button>
                 )}
             </Toolbar>
         </AppBar>

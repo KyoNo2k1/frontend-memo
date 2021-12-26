@@ -6,8 +6,10 @@ import ChipInput from 'material-ui-chip-input';
 
 import Posts from '../Posts/Posts'
 import { getPosts, getPostsBySearch } from '../../actions/posts'
-import Pagination from '../Pagination.jsx'
+import Pagination from '../Pagination/Pagination.jsx'
 import useStyles from './styles'
+import Form from '../Form/Form'
+
 function useQuery() {
     return new URLSearchParams(useLocation().search)
 }
@@ -15,6 +17,7 @@ function useQuery() {
 function Home() {
     const classes = useStyles()
     const [currentId, setCurrentId] = useState(null)
+    console.log(currentId);
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -74,6 +77,7 @@ function Home() {
                             <Button onClick={searchPost} className={classes.searchButton} color="primary" variant="contained">Search</Button>
                         </AppBar>
                         <div>Music  ComingSoon</div>
+                        <Form currentId={currentId} setCurrentId={setCurrentId}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={9}>
                         {(!searchQuery && !tags.length) && (

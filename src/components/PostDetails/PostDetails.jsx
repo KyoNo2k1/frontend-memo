@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import moment from 'moment'
 import { useParams, useNavigate } from 'react-router-dom'
 
-import useStyles from './styles'
+import useStyles from '../Pagination/styles'
 import { getPost, getPostsBySearch } from '../../actions/posts'
 import CommentSection from './CommentSection';
 
@@ -14,7 +14,7 @@ const PostDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
 
-    const { post, posts, isLoading } = useSelector(state => state.posts)
+    const { post, posts, isLoading } = useSelector(store => store.posts)
 
     useEffect(() => {
         dispatch(getPost(id))
@@ -31,7 +31,7 @@ const PostDetails = () => {
 
     if(isLoading) {
         return <Paper elevation={6} className={classes.loadingPaper}>
-        <CircularProgress size="7em" />
+            <CircularProgress color="secondary" size="7em" />
         </Paper>
     }
     const recommendPosts = posts.filter(({ _id }) => _id !== post._id)
